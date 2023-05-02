@@ -1,3 +1,4 @@
+import random
 import pygame
 ###################################################
 #기본 초기화(반드시 해야하는 것들)
@@ -33,6 +34,15 @@ character_y_pos = screen_height - character_height
 to_x = 0
 character_speed = 5
 
+#똥 만들기
+ddong = pygame.image.load("C:/PythonLecture/pygame_basic/pygame_basic/enemy.png")
+ddong_size = ddong.get_rect().size
+ddong_width = ddong_size[0]
+ddong_height = ddong_size[1]
+ddong_x_pos = random.randint(0,screen_width-ddong_width)
+ddong_y_pos = 0
+ddong_speed = 7
+
 #이벤트 루프
 running = True #게임이 진행중인가?
 while running:
@@ -60,12 +70,32 @@ while running:
         character_x_pos = 0
     elif character_x_pos>screen_width - character_width:
         character_x_pos = screen_width - character_width
+
+    ddong_y_pos += ddong_speed
+
+    if ddong_y_pos > screen_height:
+        ddong_y_pos = 0
+        ddong_x_pos = random.randint(0,screen_width-ddong_width)
+
     #4.충돌 처리
-    
+    character_rect = character.get_rect()
+    character_rect.left = character_x_pos
+    character_rect.top = character_y_pos
+
+    ddong_rect = ddong.get_rect()
+    ddong_rect.left = ddong_x_pos
+    ddong_rect.top = ddong_y_pos
+
+    if character_rect.colliderect(ddong_rect):
+        print("충돌했어요.")
+        running = False
+
     #5.화면에 그리기
     screen.blit(background,(0,0))
     screen.blit(character,(character_x_pos,character_y_pos))
+    screen.blit(ddong,(ddong_x_pos,ddong_y_pos))
     pygame.display.update() #게임화면을 다시 그리기(필수)
 
+pygame.time.delay(2000)
 #파이게임 종료          
 pygame.quit()
