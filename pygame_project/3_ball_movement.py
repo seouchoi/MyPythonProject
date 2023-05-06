@@ -24,15 +24,15 @@ image_path = os.path.join(current_path,"images") #images 폴더 위치 반환
 print(image_path)
 
 #배경 만들기
-background = pygame.image.load(os.path.join(image_path,"background.png"))
+background = pygame.image.load(os.path.join(image_path,"backgroundf.png"))
 
 #스테이지 만들기
-stage = pygame.image.load(os.path.join(image_path,"stage.png"))
+stage = pygame.image.load(os.path.join(image_path,"stagef.png"))
 stage_size = stage.get_rect().size
 stage_height = stage_size[1] #스테이지의 높이 위에서 캐릭터를 두기 위해 사용
 
 #캐릭터 만들기
-character = pygame.image.load(os.path.join(image_path,"character.png"))
+character = pygame.image.load(os.path.join(image_path,"characterf.png"))
 character_size = character.get_rect().size
 character_width = character_size[0]
 character_height = character_size[1]
@@ -68,7 +68,7 @@ balls.append({
     "init_spd_y" : ball_speed_y[0] #y 최초 속도
 })
 #무기 만들기 
-weapon = pygame.image.load(os.path.join(image_path,"weapon.png"))
+weapon = pygame.image.load(os.path.join(image_path,"weaponf.png"))
 weapon_size = weapon.get_rect().size
 weapon_width = weapon_size[0]
 
