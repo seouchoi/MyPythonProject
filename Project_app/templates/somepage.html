@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% block content %}
+<head>
+    <link rel="stylesheet" href="{{ url_for('static', filename = 'css/styles.css')}}">
+</head>
+<div>  
+    <h1>Let's Summarize</h1>
+    <form class = "action_part" action = "" method = "POST">
+        <span>
+            <p> 요약할 기사</p>
+        </span>
+        <span>
+            <textarea class = "text_box" required placeholder = "Input your sentences" type = "text" name = "massage">{{original_msg}}</textarea>
+        </span>
+        <span>
+            <input class = "sum_button" type = "submit" name = "button" value = "summarize">
+        </span>
+    </form>
+    {% if result %}
+    <div class = "result">
+        <span>
+            <p> 요약 </p>
+        </span>
+        <textarea class = "result_box">{{result}}</textarea>
+        <span class = "keyword_box">
+
+        </span>
+    </div>
+    {% endif %}
+</div>
+{% endblock %}

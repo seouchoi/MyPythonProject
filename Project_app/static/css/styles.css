@@ -1,0 +1,46 @@
+h1 {
+    font-size : 100px;
+    color : tomato;
+    text-align: center;
+    margin-top: -20px;
+}
+.action_part{
+    text-align: center;
+    position: relative;    
+}
+.text_box{
+    width: 35%;
+    height: 300px;
+    text-align: center;
+    box-sizing: border-box;
+	border: solid 2px #1E90FF;
+	border-radius: 10px;
+	font-size: 20px;
+	resize: both;
+}
+.sum_button{
+    font-size: 20px;
+    border-radius: 10px;
+    width: 150px;
+    height: 50px;
+    margin-left: 50px;
+    position: absolute;
+    top: 45%;   
+}
+.action_part .item{
+    display: inline-block;
+}
+
+.result{
+    text-align: center;
+}
+
+.result_box{
+    width: 35%;
+    height: 300px;
+    box-sizing: border-box;
+	border: solid 2px #1E90FF;
+	border-radius: 10px;
+	font-size: 20px;
+	resize: both;
+}

@@ -1,0 +1,13 @@
+<html>
+    <head>
+        <title>My website</title>
+    </head>
+    <body>
+        <div>
+            Go to:
+            <a href="{{ url_for('index_func') }}">Home</a>
+            <a href="{{ url_for('some_func') }}">Some page</a>
+        </div>
+        {% block content %}{% endblock %}
+    </body>
+</html>
